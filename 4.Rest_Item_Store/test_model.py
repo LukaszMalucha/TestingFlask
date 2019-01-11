@@ -1,5 +1,5 @@
+import unittest
 from unittest import TestCase
-
 from models.item import ItemModel
 
 
@@ -23,3 +23,7 @@ class ItemTest(TestCase):
             item.json(),
             expected,
             "The JSON export of the item is incorrect. Received {}, expected {}.".format(item.json(), expected))
+
+
+if __name__ == '__main__':
+    unittest.main()                      
