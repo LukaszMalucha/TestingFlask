@@ -50,7 +50,7 @@ class AppTest(unittest.TestCase):
                 mocked_print_post.assert_called_with(app.blogs['Test'])
         
     def test_print_posts(self):
-    blog = app.blogs['Test']
+        blog = app.blogs['Test']
         
         with patch('app.print_post') as mocked_print_post:
             app.print_posts(blog)
