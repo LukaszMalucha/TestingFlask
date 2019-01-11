@@ -9,10 +9,6 @@ class Item(Resource):
                         type=float,
                         required=True,
                         help="This field cannot be left blank!")
-    parser.add_argument('store_id',
-                        type=int,
-                        required=True,
-                        help="Every item needs a store id.")
 
     @jwt_required()
     def get(self, name):
@@ -25,7 +21,7 @@ class Item(Resource):
         if ItemModel.find_by_name(name):
             return {'message': "An item with name '{}' already exists.".format(name)}, 400
 
-        data = Item.parser.parse_args()
+        data = Item.parser.parse_args()                      ### Parser for json payload
 
         item = ItemModel(name, **data)
 
