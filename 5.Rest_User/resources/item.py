@@ -14,7 +14,7 @@ class Item(Resource):
                         required=True,
                         help="Every item needs a store id.")
 
-    @jwt_required()
+    @jwt_required()                                                             ## make sure that  user is login
     def get(self, name):
         item = ItemModel.find_by_name(name)
         if item:
