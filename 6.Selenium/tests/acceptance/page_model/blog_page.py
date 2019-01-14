@@ -13,8 +13,8 @@ class BlogPage(BasePage):
         return self.driver.find_element(*BlogPageLocators.POSTS_SECTION)
 
     @property
-    def post(self):
-        return self.driver.find_element(*BlogPageLocators.POST)
+    def posts(self):
+        return self.driver.find_elements(*BlogPageLocators.POST)
 
     @property
     def add_post_link(self):
